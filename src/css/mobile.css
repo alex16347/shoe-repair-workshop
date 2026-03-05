@@ -1,0 +1,37 @@
+@media (max-width: 390px) {
+    .container {
+        padding: 10px;
+    }
+    
+    h1 {
+        font-size: 24px;
+    }
+    
+    h2 {
+        font-size: 20px;
+    }
+    
+    .header-content {
+        flex-direction: column;
+        gap: 10px;
+    }
+    
+    nav ul {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    
+    .btn {
+        width: 100%;
+        text-align: center;
+    }
+    
+    .auth-form {
+        margin: 20px 10px;
+        padding: 20px;
+    }
+    
+    input, select, textarea {
+        font-size: 16px;
+    }
+}
