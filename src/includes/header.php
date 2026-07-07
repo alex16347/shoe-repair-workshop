@@ -21,12 +21,15 @@ $base_url = '/shoe-repair';
             <nav>
                 <ul>
                     <?php if (isset($_SESSION['user_id'])): ?>
-                        <li><a href="<?php echo $base_url; ?>/src/pages/dashboard.php">Личный кабинет</a></li>
-                        <li><a href="<?php echo $base_url; ?>/src/pages/logout.php">Выйти</a></li>
+                        <li><a href="<?php echo $base_url; ?>/src/pages/dashboard.php">📋 Личный кабинет</a></li>
+                        <?php if ($_SESSION['user_role'] == 'admin'): ?>
+                            <li><a href="<?php echo $base_url; ?>/src/pages/admin.php" style="background: #e67e22; border-radius: 4px;">👑 Админ-панель</a></li>
+                        <?php endif; ?>
+                        <li><a href="<?php echo $base_url; ?>/src/pages/logout.php">🚪 Выйти</a></li>
                     <?php else: ?>
-                        <li><a href="<?php echo $base_url; ?>/">Главная</a></li>
-                        <li><a href="<?php echo $base_url; ?>/src/pages/login.php">Вход</a></li>
-                        <li><a href="<?php echo $base_url; ?>/src/pages/register.php">Регистрация</a></li>
+                        <li><a href="<?php echo $base_url; ?>/">🏠 Главная</a></li>
+                        <li><a href="<?php echo $base_url; ?>/src/pages/login.php">🔑 Вход</a></li>
+                        <li><a href="<?php echo $base_url; ?>/src/pages/register.php">📝 Регистрация</a></li>
                     <?php endif; ?>
                 </ul>
             </nav>

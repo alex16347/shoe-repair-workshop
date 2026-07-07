@@ -1,0 +1,175 @@
+/* ========================================
+   МИКРОАНИМАЦИИ ДЛЯ МОДУЛЯ 3
+   ======================================== */
+
+/* 1. Спиннер загрузки */
+.spinner-container {
+    display: none;
+    text-align: center;
+    padding: 40px 20px;
+}
+
+.spinner-container.active {
+    display: block;
+}
+
+.spinner {
+    width: 50px;
+    height: 50px;
+    margin: 0 auto 15px;
+    border: 4px solid #e0e0e0;
+    border-top: 4px solid #2A5C82;
+    border-radius: 50%;
+    animation: spin 0.8s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+.spinner-text {
+    color: #777;
+    font-size: 14px;
+}
+
+/* 2. Анимация появления при скролле */
+.animate-on-scroll {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.animate-on-scroll.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* 3. Пульсация для кнопок */
+.btn-pulse {
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.03); }
+    100% { transform: scale(1); }
+}
+
+/* 4. Анимация для статусов */
+.status-change {
+    animation: statusFlash 0.6s ease;
+}
+
+@keyframes statusFlash {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.15); background: #fff3cd; }
+    100% { transform: scale(1); }
+}
+
+/* 5. Анимация для карточек заказов */
+.order-item {
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.order-item:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+.order-item:active {
+    transform: scale(0.98);
+}
+
+/* 6. Анимация для тостов */
+.toast {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    padding: 15px 25px;
+    border-radius: 8px;
+    color: white;
+    font-weight: 500;
+    z-index: 9999;
+    transform: translateX(120%);
+    transition: transform 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+    max-width: 400px;
+}
+
+.toast.show {
+    transform: translateX(0);
+}
+
+.toast.hide {
+    transform: translateX(120%);
+}
+
+.toast-success {
+    background: linear-gradient(135deg, #27ae60, #2ecc71);
+}
+
+.toast-error {
+    background: linear-gradient(135deg, #e74c3c, #c0392b);
+}
+
+.toast-info {
+    background: linear-gradient(135deg, #2A5C82, #3498db);
+}
+
+.toast-warning {
+    background: linear-gradient(135deg, #f39c12, #e67e22);
+}
+
+/* Прогресс-бар для тоста */
+.toast-progress {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 3px;
+    background: rgba(255,255,255,0.5);
+    animation: progress 3s linear forwards;
+    border-radius: 0 0 0 8px;
+}
+
+@keyframes progress {
+    from { width: 100%; }
+    to { width: 0%; }
+}
+
+/* 7. Анимация для полей ввода */
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(42,92,130,0.15);
+}
+
+/* 8. Анимация для таблицы */
+.orders-table tbody tr {
+    transition: background 0.2s ease;
+}
+
+.orders-table tbody tr:hover {
+    background: #f0f7ff;
+}
+
+/* 9. Анимация загрузки страницы */
+.page-fade-in {
+    animation: fadeIn 0.5s ease;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+/* 10. Анимация для счетчика */
+.counter-animate {
+    animation: counterPop 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+@keyframes counterPop {
+    0% { transform: scale(0.5); opacity: 0; }
+    100% { transform: scale(1); opacity: 1; }
+}
